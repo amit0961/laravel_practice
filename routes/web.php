@@ -35,7 +35,7 @@ Route::get('/', [ProductController::class, 'index'])->name('product.index');
 Route::get('/home/{name?}',[HomeController::class,'index'])->name('home.index');
 
 
-Route::get('login', [LoginController::class,'index'])->name('login.index'); 
+Route::get('login', [LoginController::class,'index'])->name('login.index')->middleware('checkUser'); 
 Route::post('loginSubmit', [LoginController::class,'loginSubmit'])->name('login.submit'); 
 
 Route::get('users/', [UserController::class, 'index'])->name('user.index');
