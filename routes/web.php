@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,8 @@ Route::get('/', [ProductController::class, 'index'])->name('product.index');
 Route::get('/home/{name?}',[HomeController::class,'index'])->name('home.index');
 
 
+Route::get('login', [LoginController::class,'index'])->name('login.index'); 
+Route::post('loginSubmit', [LoginController::class,'loginSubmit'])->name('login.submit'); 
 
 Route::get('users/', [UserController::class, 'index'])->name('user.index');
 Route::get('posts/', [ClientController::class, 'getAllpost'])->name('post.getAllPost');
