@@ -12,7 +12,14 @@ class LoginController extends Controller
     }
 
     public function loginSubmit(Request $request){
-        return $request->all();
+        $validated_data = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6|max:12'
+        ]);
+
+        $email =  $request->input('email');
+        $password =  $request->input('password');
+        return 'Email '.$email.' Password '.$password ;
     }
 
 }
