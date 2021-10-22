@@ -4,6 +4,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +45,8 @@ Route::get('posts/{id}', [ClientController::class, 'postByID'])->name('post.post
 Route::get('add-post', [ClientController::class, 'addPost'])->name('post.addPost');
 Route::get('edit-post', [ClientController::class, 'updatePost'])->name('post.updatePost');
 Route::get('delete-post/{id}', [ClientController::class, 'deletePost'])->name('post.deletePost');
+
+Route::get('users-pagination',[PaginationController::class, 'allUsers']);
 
 
 
